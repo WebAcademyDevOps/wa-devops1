@@ -1,0 +1,8 @@
+listen: {{ nats_listen_addr }}
+
+
+{% if nats_monitoring_enabled %}
+http: {{ nats_monitoring_listend_addr }}
+{% endif %}
+
+# readme

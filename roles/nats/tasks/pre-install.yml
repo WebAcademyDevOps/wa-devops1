@@ -1,0 +1,19 @@
+- name: Ensure group {{ nats_group }} exists
+  ansible.builtin.group:
+    name: "{{ nats_group }}"
+    state: present
+
+- name: Add the user {{ nats_user }}
+  ansible.builtin.user:
+    name: "{{ nats_user }}"
+    shell: /usr/sbin/nologin
+    group: "{{ nats_group }}"
+    system: true
+    createhome: false
+
+- name: Create directory {{ nats_conf_dir }}
+  ansible.builtin.file:
+    path: "{{ nats_conf_dir }}"
+    state: directory
+    owner: "{{ nats_user }}"
+    group: "{{ nats_group }}"

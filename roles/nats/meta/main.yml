@@ -1,0 +1,16 @@
+galaxy_info:
+  role_name: nats
+  author: webacademy@webacademy.com
+  description: Install and configure NATS server
+  company: webacademy
+  license: MIT
+
+  min_ansible_version: 2.9
+
+  platforms:
+  - name: Centos
+    versions:
+    - 8
+  - name: Ubuntu
+    versions:
+    - 20.04

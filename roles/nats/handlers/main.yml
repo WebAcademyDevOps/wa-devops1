@@ -1,0 +1,10 @@
+---
+- name: restart nats
+  become: true
+  systemd:
+    daemon_reload: true
+    name: nats-server
+    state: restarted
+    enabled: yes
+  when:
+    - not ansible_check_mode

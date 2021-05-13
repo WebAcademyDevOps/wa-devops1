@@ -1,0 +1,12 @@
+---
+
+- name: Install a .deb package from the nats repo
+  apt:
+    deb: "{{ nats_download_url }}"
+  when: ansible_os_family == "Debian"
+
+- name: Install a .rpm package from the nats repo
+  yum:
+    name: "{{ nats_download_url }}"
+    state: present
+  when: ansible_os_family == "RedHat"

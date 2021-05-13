@@ -1,0 +1,19 @@
+---
+# defaults file for nats
+
+nats_version: v2.2.2
+nats_package: nats-server-{{ nats_version }}-{{ arch }}.{{ os_package }}
+nats_release_url: https://github.com/nats-io/nats-server/releases/download
+nats_download_url: "{{ nats_release_url }}/{{ nats_version }}/{{ nats_package }}"
+nats_bin_dir: /usr/local/bin/nats-server
+nats_conf_dir: /etc/nats
+nats_conf_file: nats-server.conf
+nats_user: nats
+nats_group: nats
+
+nats_listen_addr: 127.0.0.1:4222
+
+
+nats_monitoring_enabled: false
+
+nats_monitoring_listend_addr: localhost:8222
